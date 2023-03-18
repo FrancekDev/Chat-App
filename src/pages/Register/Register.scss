@@ -1,0 +1,51 @@
+.Container {
+  background-color: #aabeff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 60px;
+  border-radius: 10px;
+  background-color: #f0f1f5;
+  gap: 10px;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  input {
+    background-color: #f0f1f5;
+    padding: 15px;
+    border: none;
+    border-bottom: 1px solid #425289;
+
+    &::placeholder {
+      color: rgb(147, 147, 147);
+    }
+
+    &:focus {
+      //   border: 1px solid #425289;
+      outline: none;
+    }
+  }
+}
+
+.Logo {
+  color: #5d5d8d;
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.Title {
+  color: #5d5d8d;
+  font-weight: 800;
+  font-size: 18px;
+}
