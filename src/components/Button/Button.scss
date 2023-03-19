@@ -1,4 +1,31 @@
 .Button {
-  &:hover {
+  padding: 8px;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  &_login {
+    background-color: var(--color-primary);
+    color: var(--color-text-primary);
+
+    &:hover {
+      background-color: var(--color-secondary);
+      outline: 2px solid var(--color-primary);
+    }
+  }
+
+  &_logout {
+    background-color: var(--color-primary);
+
+    &:hover {
+      background-color: var(--color-secondary);
+    }
+  }
+
+  &_send {
+  }
+
+  &_add {
   }
 }

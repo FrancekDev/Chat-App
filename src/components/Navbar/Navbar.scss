@@ -1,0 +1,25 @@
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary-light);
+  color: var(--color-text-primary);
+  height: 50px;
+  padding: 12px;
+
+  &-Logo {
+    font-weight: 700;
+  }
+
+  &-User {
+    display: flex;
+    gap: 10px;
+  }
+
+  &-Image {
+    background-color: var(--color-text-primary);
+    height: 24px;
+    width: 24px;
+    object-fit: cover;
+  }
+}

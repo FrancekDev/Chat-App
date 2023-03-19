@@ -3,24 +3,27 @@ import PropTypes from "prop-types";
 import "./Button.scss";
 
 const Button = ({
-  prop,
-  isLanding = false,
-  isSecondary = false,
-  isOutline = false,
+  isLogout = false,
+  isLogin = false,
+  isSend = false,
+  isAdd = false,
   children,
   handleClick,
 }) => {
   let modifierClass = "";
 
   switch (true) {
-    case isLanding:
-      modifierClass = "Button_landing";
+    case isLogin:
+      modifierClass = "Button_login";
       break;
-    case isSecondary:
-      modifierClass = "Button_secondary";
+    case isLogout:
+      modifierClass = "Button_logout";
       break;
-    case isOutline:
-      modifierClass = "Button_outline";
+    case isSend:
+      modifierClass = "Button_send";
+      break;
+    case isAdd:
+      modifierClass = "Button_add";
       break;
     default:
       modifierClass = "";
@@ -28,18 +31,18 @@ const Button = ({
   }
 
   return (
-    <button className={`Button ${modifierClass} ${prop}`} onClick={handleClick}>
+    <button className={`Button ${modifierClass}`} onClick={handleClick}>
       {children}
     </button>
   );
 };
 
 Button.propTypes = {
-  prop: PropTypes.string,
   children: PropTypes.node,
-  isLanding: PropTypes.bool,
-  isSecondary: PropTypes.bool,
-  isOutline: PropTypes.bool,
+  isLogin: PropTypes.bool,
+  isLogout: PropTypes.bool,
+  isSend: PropTypes.bool,
+  isAdd: PropTypes.bool,
   handleClick: PropTypes.func,
 };
 
