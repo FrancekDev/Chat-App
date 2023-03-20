@@ -7,7 +7,7 @@ const Register = () => {
   return (
     <section className="Container">
       <div className="Wrapper">
-        <span className="Logo">Lightning</span>
+        <span className="Logo">Lightning chat</span>
         <span className="Title">Register</span>
 
         <form className="Form">

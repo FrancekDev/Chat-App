@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <section className="Container">
       <div className="Wrapper">
-        <span className="Logo">Lightning</span>
+        <span className="Logo">Lightning chat</span>
         <span className="Title">Login</span>
 
         <form className="Form">

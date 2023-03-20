@@ -1,0 +1,19 @@
+.User {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+
+  &-Image {
+    background-color: var(--color-text-primary);
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: 50% 0%;
+  }
+
+  &Info {
+  }
+}
