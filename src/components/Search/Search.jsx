@@ -12,7 +12,7 @@ const Search = () => {
   return (
     <div className="Search">
       <div className="Search-Form">
-        <input type="text" placeholder="find a user" />
+        <input type="text" placeholder="Find a user" />
       </div>
 
       <User img={UserImg} name={"Sarah"}></User>

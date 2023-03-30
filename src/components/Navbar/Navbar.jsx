@@ -13,7 +13,7 @@ const Navbar = ({ img }) => {
   return (
     <div className="Navbar">
       <span className="Navbar-Logo">Lightning chat</span>
-      <User img={UserImg} name={"Fran"}>
+      <User img={UserImg} name={"Fran"} isHover={false}>
         <Button isLogout>Logout</Button>
       </User>
     </div>
