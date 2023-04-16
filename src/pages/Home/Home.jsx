@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.scss";
 import PropTypes from "prop-types";
-import Sidebar from "../../components/Sidebar/Sidebar";
+
 import Chat from "../../components/Chat/Chat";
 
-const Home = (props) => {
+const Home = ({ username }) => {
   return (
     <div className="Home">
       <div className="Home-Container">
-        <Sidebar></Sidebar>
-        <Chat></Chat>
+        <Chat username={username}></Chat>
       </div>
     </div>
   );
 };
 
-Home.propTypes = {};
+Home.propTypes = {
+  username: PropTypes.string,
+};
 
 export default Home;

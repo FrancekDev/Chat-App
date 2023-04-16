@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.scss";
-import Register from "./pages/Register/Register";
-import Login from "./pages/Login/Login";
+
 import Home from "./pages/Home/Home";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (

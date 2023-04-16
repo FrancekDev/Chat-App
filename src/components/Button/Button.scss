@@ -1,11 +1,11 @@
 .Button {
-  padding: 8px;
   font-weight: 700;
   border-radius: 8px;
   border: none;
   cursor: pointer;
 
   &_login {
+    padding: 8px;
     background-color: var(--color-primary);
     color: var(--color-text-primary);
 
@@ -16,17 +16,31 @@
   }
 
   &_logout {
+    padding: 8px;
     background-color: var(--color-primary);
     font-size: 12px;
+    color: var(--color-text-primary);
 
     &:hover {
       background-color: var(--color-secondary);
     }
+
+    @media screen and (max-width: 768px) {
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &_send {
-  }
+    padding: 10px 15px;
+    background-color: var(--color-primary);
+    color: var(--color-text-primary);
 
-  &_add {
+    &:hover {
+      background-color: var(--color-secondary);
+      outline: 2px solid var(--color-primary);
+    }
   }
 }
