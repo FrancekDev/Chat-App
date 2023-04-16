@@ -1,11 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { v4 as uuidv4 } from "uuid";
 import "./Messages.scss";
 
 const Messages = (props) => {
   const renderMessage = (message) => {
-    const { member, text, id, timestamp } = message;
+    const { member, text } = message;
     const { currentMember } = props;
 
     const messageFromMe = member.id === currentMember.id;
@@ -16,13 +14,12 @@ const Messages = (props) => {
 
     return (
       <>
-        <li key={id} className={messageWrapper}>
+        <li className={messageWrapper}>
           <div className="Message-Info">
             <span
               className="Message-Img"
               style={{ backgroundColor: member.clientData.color }}
             />
-            <span className="Message-Time">{timestamp}</span>
           </div>
           <div className="Message-Content">
             <p className="Message-ContentUsername">

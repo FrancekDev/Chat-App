@@ -1,6 +1,4 @@
-import PropTypes from "prop-types";
 import React from "react";
-
 import Messages from "../Massages/Messages";
 import Input from "../Input/Input";
 import { randomColor, randomName } from "../../utils/userGenerator";
@@ -14,7 +12,6 @@ class Chat extends React.Component {
       username: randomName(),
       color: randomColor(),
     },
-    time: "",
   };
 
   onSendMessage = (message) => {
