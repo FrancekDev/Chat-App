@@ -8,15 +8,6 @@ import { randomColor, randomName } from "../../utils/userGenerator";
 import "./Chat.scss";
 
 class Chat extends React.Component {
-  state = {
-    messages: [],
-    member: {
-      username: randomName(),
-      color: randomColor(),
-    },
-    time: "",
-  };
-
   onSendMessage = (message) => {
     this.drone.publish({
       room: "observable-room",
@@ -24,8 +15,17 @@ class Chat extends React.Component {
     });
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      messages: [],
+      member: {
+        username: this.props.username,
+        color: randomColor(),
+      },
+      time: "",
+    };
 
     this.drone = new window.Scaledrone("ZMug77s8tUiDDJFl", {
       data: this.state.member,
@@ -35,15 +35,17 @@ class Chat extends React.Component {
       if (error) {
         return console.error(error);
       }
+
       const member = { ...this.state.member };
       member.id = this.drone.clientId;
       this.setState({ member });
 
       const room = this.drone.subscribe("observable-room");
 
-      room.on("data", (data, member) => {
+      room.on("message", (message) => {
+        const { data, id, timestamp, member } = message;
         const messages = this.state.messages;
-        messages.push({ member, text: data });
+        messages.push({ member, text: data, id, timestamp });
         this.setState({ messages });
       });
     });

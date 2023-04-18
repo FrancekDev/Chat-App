@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { v4 as uuidv4 } from "uuid";
+
 import "./Messages.scss";
 
 const Messages = (props) => {
@@ -15,8 +15,8 @@ const Messages = (props) => {
       : "Message-ContentText";
 
     return (
-      <>
-        <li key={id} className={messageWrapper}>
+      <ul key={id}>
+        <li className={messageWrapper}>
           <div className="Message-Info">
             <span
               className="Message-Img"
@@ -31,18 +31,18 @@ const Messages = (props) => {
             <p className={messageText}>{text}</p>
           </div>
         </li>
-      </>
+      </ul>
     );
   };
 
   const { messages } = props;
   return (
-    <div className="Messages">
-      <ul>{messages.map((m, id) => renderMessage(m, id))}</ul>
-    </div>
+    <div className="Messages">{messages.map((m) => renderMessage(m))}</div>
   );
 };
 
-Messages.propTypes = {};
+Messages.propTypes = {
+  currentMember: PropTypes.object,
+};
 
 export default Messages;
