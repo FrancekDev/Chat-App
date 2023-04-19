@@ -24,7 +24,7 @@ class Chat extends React.Component {
         username: this.props.username,
         color: randomColor(),
       },
-      time: "",
+      members: [],
     };
 
     this.drone = new window.Scaledrone("ZMug77s8tUiDDJFl", {
@@ -47,6 +47,10 @@ class Chat extends React.Component {
         const messages = this.state.messages;
         messages.push({ member, text: data, id, timestamp });
         this.setState({ messages });
+      });
+
+      room.on("members", (m) => {
+        this.members = m;
       });
     });
   }

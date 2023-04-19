@@ -14,7 +14,6 @@ const Login = ({ onUsername }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // setUser("");
     onUsername(user);
     navigate("/chat");
   };
@@ -27,7 +26,6 @@ const Login = ({ onUsername }) => {
         <form onSubmit={onSubmit} className="Form">
           <input
             onChange={onChange}
-            // value={user}
             className="Form-Input"
             type="text"
             placeholder="Enter your username"

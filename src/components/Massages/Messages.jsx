@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import moment from "moment";
 
 import "./Messages.scss";
 
@@ -7,6 +8,8 @@ const Messages = (props) => {
   const renderMessage = (message) => {
     const { member, text, id, timestamp } = message;
     const { currentMember } = props;
+
+    const time = moment(timestamp * 1000).format("HH:mm");
 
     const messageFromMe = member.id === currentMember.id;
     const messageWrapper = messageFromMe ? "Message Message_Owner" : "Message";
@@ -22,7 +25,7 @@ const Messages = (props) => {
               className="Message-Img"
               style={{ backgroundColor: member.clientData.color }}
             />
-            <span className="Message-Time">{timestamp}</span>
+            <span className="Message-Time">{time}</span>
           </div>
           <div className="Message-Content">
             <p className="Message-ContentUsername">
