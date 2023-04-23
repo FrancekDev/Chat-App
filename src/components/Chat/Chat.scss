@@ -1,13 +1,13 @@
 .Chat {
   background-color: var(--color-third);
-  flex: 1;
+  flex: 3;
 
   &-Info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 50px;
     background-color: var(--color-text-primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 10px;
     color: var(--color-white);
   }

@@ -14,7 +14,15 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Login onUsername={onUsername} />} />
+      <Route
+        exaxt
+        path="/"
+        render={() => {
+          window.location.href = "/";
+          return null;
+        }}
+        element={<Login onUsername={onUsername} />}
+      />
       <Route path="/chat" element={<Home username={username} />} />
     </Routes>
   );

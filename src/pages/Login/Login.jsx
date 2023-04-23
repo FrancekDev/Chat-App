@@ -29,6 +29,7 @@ const Login = ({ onUsername }) => {
             className="Form-Input"
             type="text"
             placeholder="Enter your username"
+            autoFocus
           />
           <Button isLogin>Login</Button>
         </form>

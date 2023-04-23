@@ -4,10 +4,9 @@ import moment from "moment";
 
 import "./Messages.scss";
 
-const Messages = (props) => {
+const Messages = ({ messages, currentMember }) => {
   const renderMessage = (message) => {
     const { member, text, id, timestamp } = message;
-    const { currentMember } = props;
 
     const time = moment(timestamp * 1000).format("HH:mm");
 
@@ -38,13 +37,13 @@ const Messages = (props) => {
     );
   };
 
-  const { messages } = props;
   return (
     <div className="Messages">{messages.map((m) => renderMessage(m))}</div>
   );
 };
 
 Messages.propTypes = {
+  messages: PropTypes.array,
   currentMember: PropTypes.object,
 };
 

@@ -2,7 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Button.scss";
 
-const Button = ({ isLogin = false, isSend = false, children, handleClick }) => {
+const Button = ({
+  isLogout = false,
+  isLogin = false,
+  isSend = false,
+  children,
+  handleClick,
+}) => {
   let modifierClass = "";
 
   switch (true) {
@@ -11,6 +17,9 @@ const Button = ({ isLogin = false, isSend = false, children, handleClick }) => {
       break;
     case isSend:
       modifierClass = "Button_send";
+      break;
+    case isLogout:
+      modifierClass = "Button_logout";
       break;
     default:
       modifierClass = "";
@@ -27,6 +36,7 @@ const Button = ({ isLogin = false, isSend = false, children, handleClick }) => {
 Button.propTypes = {
   children: PropTypes.node,
   isLogin: PropTypes.bool,
+  isLogout: PropTypes.bool,
   isSend: PropTypes.bool,
   handleClick: PropTypes.func,
 };

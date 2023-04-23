@@ -1,0 +1,27 @@
+.User {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-primary);
+  margin: 2px;
+  padding: 3px;
+
+  &-Image {
+    background-color: var(--color-text-primary);
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: 50% 0%;
+
+    &Owner {
+      height: 45px;
+      width: 45px;
+    }
+  }
+
+  &-Name {
+    font-size: 18px;
+    color: var(--color-white);
+  }
+}
